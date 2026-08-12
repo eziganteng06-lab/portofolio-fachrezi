@@ -1,6 +1,10 @@
 [build]
-  command = "next build"
-  publish = ".next"
+  command = ""
+  publish = "public"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NETLIFY_SKIP_FRAMEWORK_DETECTION = "true"
 
 [[headers]]
   for = "/*"
