@@ -1,0 +1,52 @@
+===========================================================
+CURRICULUM VITAE - MOCHAMAD FACHREZI AZHARI
+===========================================================
+
+DATA PRIBADI
+- Nama: Mochamad Fachrezi Azhari
+- Profesi: Software Developer Student & Mobile App Enthusiast
+- Pendidikan: SMK Jakarta Pusat 1 (Rekayasa Perangkat Lunak - RPL 2024-2027)
+- Lokasi: Jakarta, Indonesia
+- Email: mochamad.fachrezi8@smk.belajar.id
+- WhatsApp: +62 814-0052-8161
+- GitHub: https://github.com/eziganteng06-lab
+
+RINGKASAN PROFIL
+Siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang 
+memiliki minat tinggi di bidang teknologi informasi, khususnya pengembangan 
+aplikasi mobile (Flutter), pemrograman, dan website. Memiliki semangat belajar tinggi, 
+disiplin, cepat beradaptasi, serta mampu bekerja secara individu maupun dalam tim.
+
+KEAHLIAN TEKNIS
+- Flutter & Dart Mobile App Development
+- Pemrograman Dasar (HTML5, CSS3, JavaScript, Dart)
+- Integrasi REST API (CoinGecko Real-Time API)
+- Perancangan UI/UX Application
+- Version Control: Git & GitHub
+
+KEAHLIAN SOFT SKILLS
+- Kerja Sama Tim
+- Komunikasi yang Baik
+- Manajemen Waktu
+- Cepat Belajar
+- Disiplin & Bertanggung Jawab
+- Mampu Beradaptasi
+- Teliti dalam Bekerja
+- Pelayanan Pelanggan
+
+PROYEK UTAMA
+1. CryptoKu (Aplikasi Mobile Crypto Tracker)
+   - Deskripsi: Memantau harga cryptocurrency secara real-time via CoinGecko REST API.
+   - Fitur: Live Market Summary, Search Coin, Favorites, Dark/Light Mode.
+
+PENGALAMAN
+1. Jual Beli Pakaian Bekas Thrifting (Agustus 2024 - Mei 2025)
+   - Bertanggung jawab manajemen produk, penentuan harga, promosi medsos, & customer service.
+2. IL Sogno (Juni 2025 - Juli 2025)
+   - Operasional & kebersihan area kerja dengan standar ketelitian tinggi.
+3. Pengembangan CryptoKu (Juli 2026 - Agustus 2026)
+   - Analisis kebutuhan, UI/UX design, Flutter & CoinGecko REST API integration.
+
+===========================================================
+Building Digital Solutions For The Future
+===========================================================
