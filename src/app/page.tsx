@@ -53,14 +53,77 @@ export default function Home() {
     }, 1000);
   };
 
+  const [currentLang, setCurrentLang] = useState<"id" | "en">("id");
+
+  const translations = {
+    id: {
+      beranda: "Beranda",
+      tentang: "Tentang",
+      keahlian: "Keahlian",
+      proyek: "Proyek",
+      pengalaman: "Pengalaman",
+      pendidikan: "Pendidikan",
+      kontak: "Kontak",
+      greeting: "👋 Halo, Saya",
+      hero_subhead: "Software Developer Student & Mobile App Enthusiast",
+      hero_desc: "Saya adalah siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar tinggi, disiplin, bertanggung jawab, cepat beradaptasi, serta mampu bekerja secara individu maupun dalam tim.",
+      hero_btn_projects: "Lihat Proyek Saya",
+      about_tag: "Mengenal Lebih Dekat",
+      about_title: "Tentang Saya",
+      about_heading: "🎓 Siswa RPL Berdedikasi & High-Speed Learner",
+      about_p1: "Siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar yang tinggi, mampu bekerja sama dalam tim maupun secara mandiri, cepat beradaptasi, disiplin, bertanggung jawab, serta siap mengembangkan keterampilan untuk menghadapi dunia kerja dan memberikan kontribusi positif di lingkungan profesional.",
+      exp_tag: "Jejak Langkah",
+      exp_title: "Pengalaman",
+      edu_tag: "Latar Belakang Akademis",
+      edu_title: "Pendidikan",
+      contact_tag: "Hubungi Saya",
+      contact_title: "Kontak",
+      contact_domisili: "Domisili & Lokasi",
+      contact_form_title: "Kirim Pesan",
+      form_name_label: "Nama Lengkap",
+      form_email_label: "Alamat Email",
+      form_msg_label: "Isi Pesan",
+      btn_send: "🚀 Kirim Pesan",
+    },
+    en: {
+      beranda: "Home",
+      tentang: "About",
+      keahlian: "Skills",
+      proyek: "Projects",
+      pengalaman: "Experience",
+      pendidikan: "Education",
+      kontak: "Contact",
+      greeting: "👋 Hello, I'm",
+      hero_subhead: "Software Developer Student & Mobile App Enthusiast",
+      hero_desc: "I am a Software Engineering student at SMK Jakarta Pusat 1 passionate about IT, mobile app development, programming, and web solutions. Fast learner, disciplined, responsible, adaptable, and effective working individually or in teams.",
+      hero_btn_projects: "View My Projects",
+      about_tag: "Get To Know Me",
+      about_title: "About Me",
+      about_heading: "🎓 Dedicated RPL Student & High-Speed Learner",
+      about_p1: "A Software Engineering student at SMK Jakarta Pusat 1 passionate about information technology, mobile application development, programming, and websites. Highly motivated, adaptable, disciplined, responsible, and equipped to contribute positively in professional environments.",
+      exp_tag: "Career Path & Projects",
+      exp_title: "Experience",
+      edu_tag: "Academic Background",
+      edu_title: "Education",
+      contact_tag: "Get In Touch",
+      contact_title: "Contact",
+      contact_domisili: "Location & Domicile",
+      contact_form_title: "Send a Message",
+      form_name_label: "Full Name",
+      form_email_label: "Email Address",
+      form_msg_label: "Message",
+      btn_send: "🚀 Send Message",
+    }
+  };
+
   const navLinks = [
-    { name: "Beranda", href: "#beranda" },
-    { name: "Tentang", href: "#tentang" },
-    { name: "Keahlian", href: "#keahlian" },
-    { name: "Proyek", href: "#proyek" },
-    { name: "Pengalaman", href: "#pengalaman" },
-    { name: "Pendidikan", href: "#pendidikan" },
-    { name: "Kontak", href: "#kontak" },
+    { name: translations[currentLang].beranda, href: "#beranda" },
+    { name: translations[currentLang].tentang, href: "#tentang" },
+    { name: translations[currentLang].keahlian, href: "#keahlian" },
+    { name: translations[currentLang].proyek, href: "#proyek" },
+    { name: translations[currentLang].pengalaman, href: "#pengalaman" },
+    { name: translations[currentLang].pendidikan, href: "#pendidikan" },
+    { name: translations[currentLang].kontak, href: "#kontak" },
   ];
 
   const technicalSkills = [
@@ -173,6 +236,20 @@ export default function Home() {
 
           {/* RIGHT ACTION BUTTONS (Kanan) */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Language Switcher Pill */}
+            <button
+              onClick={() => setCurrentLang(currentLang === "id" ? "en" : "id")}
+              aria-label="Toggle Language"
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 border ${
+                isDarkMode
+                  ? "bg-slate-800/80 text-blue-400 border-slate-700 hover:bg-slate-700 hover:text-white"
+                  : "bg-slate-100 text-blue-600 border-slate-200 hover:bg-slate-200"
+              }`}
+            >
+              <span>🌐</span>
+              <span>{currentLang.toUpperCase()}</span>
+            </button>
+
             {/* Dark Mode Toggle */}
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
@@ -195,11 +272,16 @@ export default function Home() {
                 </svg>
               )}
             </button>
-
           </div>
 
           {/* MOBILE MENU TOGGLE */}
           <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={() => setCurrentLang(currentLang === "id" ? "en" : "id")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold border ${isDarkMode ? "bg-slate-800 text-blue-400 border-slate-700" : "bg-slate-200 text-blue-600 border-slate-300"}`}
+            >
+              🌐 {currentLang.toUpperCase()}
+            </button>
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className={`p-2 rounded-lg ${isDarkMode ? "bg-slate-800 text-yellow-400" : "bg-slate-200 text-slate-700"}`}
@@ -260,7 +342,7 @@ export default function Home() {
               
               {/* Badge Kecil */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium shadow-sm">
-                <span>👋 Halo, Saya</span>
+                <span>{translations[currentLang].greeting}</span>
               </div>
 
               {/* Judul Besar */}
@@ -271,14 +353,13 @@ export default function Home() {
                 
                 {/* Sub Judul Warna Biru */}
                 <h2 className="text-2xl sm:text-3xl font-bold text-blue-500 leading-snug">
-                  Software Developer Student <br className="hidden sm:block" />
-                  <span className="text-blue-400">& Mobile App Enthusiast</span>
+                  {translations[currentLang].hero_subhead}
                 </h2>
               </div>
 
               {/* Deskripsi */}
               <p className={`text-base sm:text-lg leading-relaxed max-w-2xl ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
-                Saya adalah siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar tinggi, disiplin, bertanggung jawab, cepat beradaptasi, serta mampu bekerja secara individu maupun dalam tim.
+                {translations[currentLang].hero_desc}
               </p>
 
               {/* Tombol Aksi */}
@@ -287,7 +368,7 @@ export default function Home() {
                   href="#proyek"
                   className="bg-blue-500 hover:bg-blue-600 active:scale-95 text-white font-semibold text-base px-6 py-3.5 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2 group"
                 >
-                  Lihat Proyek Saya
+                  {translations[currentLang].hero_btn_projects}
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
