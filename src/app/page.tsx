@@ -7,7 +7,6 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("beranda");
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [cvModalOpen, setCvModalOpen] = useState(false);
   const [demoModalOpen, setDemoModalOpen] = useState(false);
 
   // Form State
@@ -197,16 +196,6 @@ export default function Home() {
               )}
             </button>
 
-            {/* Tombol Biru Unduh CV */}
-            <button
-              onClick={() => setCvModalOpen(true)}
-              className="bg-blue-500 hover:bg-blue-600 active:scale-95 text-white font-medium text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-200 flex items-center gap-2"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Unduh CV
-            </button>
           </div>
 
           {/* MOBILE MENU TOGGLE */}
@@ -252,15 +241,6 @@ export default function Home() {
                   {link.name}
                 </a>
               ))}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setCvModalOpen(true);
-                }}
-                className="mt-2 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium text-sm py-2.5 rounded-xl shadow-md flex items-center justify-center gap-2"
-              >
-                Unduh CV
-              </button>
             </div>
           </div>
         )}
@@ -312,20 +292,6 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </a>
-
-                <button
-                  onClick={() => setCvModalOpen(true)}
-                  className={`font-semibold text-base px-6 py-3.5 rounded-xl border transition-all duration-300 flex items-center gap-2 ${
-                    isDarkMode
-                      ? "bg-slate-800/80 hover:bg-slate-700 border-slate-700 text-white hover:border-blue-500/50"
-                      : "bg-white hover:bg-slate-100 border-slate-300 text-slate-800 shadow-sm"
-                  }`}
-                >
-                  <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Unduh CV
-                </button>
               </div>
 
               {/* Bawah Tombol: Social Media & Lokasi */}
@@ -980,42 +946,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* CV MODAL */}
-      {cvModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
-          <div className={`max-w-md w-full p-6 rounded-3xl border shadow-2xl space-y-6 ${isDarkMode ? "bg-[#0d1e36] border-slate-700" : "bg-white text-slate-900"}`}>
-            <div className="flex justify-between items-center pb-4 border-b border-slate-700">
-              <h3 className="text-xl font-bold text-white">Unduh Curriculum Vitae</h3>
-              <button onClick={() => setCvModalOpen(false)} className="text-slate-400 hover:text-white text-lg font-bold">✕</button>
-            </div>
-            
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center text-3xl mx-auto">
-                📄
-              </div>
-              <h4 className="text-lg font-bold text-white">CV Mochamad Fachrezi Azhari</h4>
-              <p className="text-xs text-slate-300">Format PDF resmi dengan riwayat pendidikan, proyek CryptoKu, dan keahlian rekayasa perangkat lunak.</p>
-            </div>
-
-            <div className="space-y-3">
-              <a
-                href="mailto:mochamad.fachrezi8@smk.belajar.id?subject=Minta%20CV%20Mochamad%20Fachrezi"
-                onClick={() => setCvModalOpen(false)}
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl shadow-md flex items-center justify-center gap-2"
-              >
-                <span>📥</span> Download PDF Document
-              </a>
-              <button
-                onClick={() => setCvModalOpen(false)}
-                className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-2.5 rounded-xl text-sm"
-              >
-                Tutup Window
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* DEMO MODAL */}
       {demoModalOpen && (

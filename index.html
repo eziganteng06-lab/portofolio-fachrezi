@@ -555,15 +555,6 @@
         >
           <span id="theme-icon-desktop" class="text-lg">☀️</span>
         </button>
-
-        <!-- Tombol Biru Unduh CV -->
-        <button
-          onclick="downloadCV()"
-          class="bg-blue-500 hover:bg-blue-600 active:scale-95 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-200 flex items-center gap-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          <span data-i18n="cv_btn">Unduh CV</span>
-        </button>
       </div>
 
       <!-- Mobile Toggle -->
@@ -591,10 +582,6 @@
         <a href="#pengalaman" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Pengalaman</a>
         <a href="#pendidikan" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Pendidikan</a>
         <a href="#kontak" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Kontak</a>
-        <button onclick="closeMobileMenu(); downloadCV();" class="mt-2 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium text-sm py-2.5 rounded-xl shadow-md flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          Unduh CV
-        </button>
       </div>
     </div>
   </header>
@@ -631,10 +618,6 @@
               <span data-i18n="hero_btn_projects">Lihat Proyek Saya</span>
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
-            <button onclick="downloadCV()" class="font-semibold text-base px-6 py-3.5 rounded-xl border bg-slate-800/80 hover:bg-slate-700 border-slate-700 text-white hover:border-blue-500/50 transition-all duration-300 flex items-center gap-2">
-              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              <span data-i18n="cv_btn">Unduh CV</span>
-            </button>
           </div>
 
           <div class="pt-6 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-4">
@@ -1574,7 +1557,6 @@
       'nav_pengalaman': { id: 'Pengalaman', en: 'Experience' },
       'nav_pendidikan': { id: 'Pendidikan', en: 'Education' },
       'nav_kontak': { id: 'Kontak', en: 'Contact' },
-      'cv_btn': { id: 'Unduh CV', en: 'Download CV' },
 
       // Hero Section
       'hero_greeting': { id: '👋 Halo, Saya', en: "👋 Hello, I'm" },
@@ -1669,65 +1651,6 @@
     // Load Saved Language on Start
     if (currentLang === 'en') {
       setTimeout(updateLanguageUI, 100);
-    }
-
-    // Download CV Real PDF Document
-    function downloadCV() {
-      const cvText = `===========================================================
-CURRICULUM VITAE - MOCHAMAD FACHREZI AZHARI
-===========================================================
-
-DATA PRIBADI
-- Nama: Mochamad Fachrezi Azhari
-- Profesi: Software Developer Student & Mobile App Enthusiast
-- Pendidikan: SMK Jakarta Pusat 1 (Rekayasa Perangkat Lunak - RPL 2024-2027)
-- Lokasi: Jakarta, Indonesia
-- Email: mochamad.fachrezi8@smk.belajar.id
-- WhatsApp: +62 814-0052-8161
-- GitHub: https://github.com/eziganteng06-lab
-
-RINGKASAN PROFIL
-Siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang 
-memiliki minat tinggi di bidang teknologi informasi, khususnya pengembangan 
-aplikasi mobile (Flutter), pemrograman, dan website. Memiliki semangat belajar tinggi, 
-disiplin, cepat beradaptasi, serta siap berkontribusi profesional.
-
-KEAHLIAN TEKNIS
-- Flutter & Dart Mobile App Development
-- Pemrograman Dasar (HTML5, CSS3, JavaScript, Dart)
-- Integrasi REST API (CoinGecko Real-Time API)
-- Perancangan UI/UX Application
-- Version Control: Git & GitHub
-
-PROYEK UTAMA
-1. CryptoKu (Aplikasi Mobile Crypto Tracker)
-   - Deskripsi: Memantau harga cryptocurrency secara real-time via CoinGecko REST API.
-   - Fitur: Live Market Summary, Search Coin, Favorites, Dark/Light Mode.
-2. SholatKu (Aplikasi Jadwal Sholat 38 Provinsi Indonesia)
-   - Deskripsi: Aplikasi jadwal sholat modern berbasis Flutter tanpa GPS untuk 38 provinsi.
-   - Fitur: Jadwal Sholat 38 Provinsi, Countdown, Notifikasi, Suara Adzan, Material Design 3.
-
-PENGALAMAN
-1. Jual Beli Pakaian Bekas Thrifting (Agustus 2024 - Mei 2025)
-   - Bertanggung jawab manajemen produk, penentuan harga, promosi medsos, & customer service.
-2. IL Sogno (Juni 2025 - Juli 2025)
-   - Operasional & kebersihan area kerja dengan standar ketelitian tinggi.
-3. Pengembangan CryptoKu (Juli 2026 - Agustus 2026)
-   - Analisis kebutuhan, UI/UX design, Flutter & CoinGecko REST API integration.
-
-===========================================================
-Building Digital Solutions For The Future
-===========================================================`;
-
-      const blob = new Blob([cvText], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'CV-Mochamad-Fachrezi-Azhari.txt';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
     }
 
     // Mobile Menu Functions
