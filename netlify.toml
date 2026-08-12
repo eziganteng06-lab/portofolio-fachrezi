@@ -1,6 +1,6 @@
 [build]
-  command = ""
-  publish = "."
+  command = "next build"
+  publish = ".next"
 
 [[headers]]
   for = "/*"
