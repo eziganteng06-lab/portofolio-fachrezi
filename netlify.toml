@@ -1,5 +1,5 @@
 [build]
-  command = ""
+  command = "echo 'Static deployment ready'"
   publish = "."
 
 [[headers]]
