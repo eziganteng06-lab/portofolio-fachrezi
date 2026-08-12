@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mochamad Fachrezi Azhari | Software Developer Student &amp; Mobile App Enthusiast</title>
+  <meta name="description" content="Portfolio Resmi Mochamad Fachrezi Azhari - Siswa Rekayasa Perangkat Lunak (RPL) SMK Jakarta Pusat 1. Spesialisasi Pengembangan Aplikasi Mobile & Web." />
+  <meta name="keywords" content="Mochamad Fachrezi Azhari, Portfolio, Software Developer Student, SMK Jakarta Pusat 1, Flutter Developer, CryptoKu" />
+  <meta name="author" content="Mochamad Fachrezi Azhari" />
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Lenis Smooth Scroll CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+
+  <!-- GSAP & ScrollTrigger & Lenis JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#081529',
+              card: '#0d1e36',
+              light: '#132847',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #081529;
+      color: #ffffff;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Light mode background & total high-contrast typography overrides */
+    html:not(.dark) body {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+    }
+
+    html:not(.dark) h1,
+    html:not(.dark) h2,
+    html:not(.dark) h3,
+    html:not(.dark) h4,
+    html:not(.dark) h5,
+    html:not(.dark) h6,
+    html:not(.dark) .letter-span,
+    html:not(.dark) .split-heading {
+      color: #0f172a !important;
+    }
+
+    html:not(.dark) p,
+    html:not(.dark) label {
+      color: #1e293b !important;
+    }
+
+    html:not(.dark) .text-white,
+    html:not(.dark) .text-slate-100,
+    html:not(.dark) .text-slate-200,
+    html:not(.dark) .text-slate-300 {
+      color: #0f172a !important;
+    }
+
+    html:not(.dark) .text-slate-400,
+    html:not(.dark) .text-slate-500 {
+      color: #475569 !important;
+    }
+
+    html:not(.dark) .glass-nav {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-bottom-color: rgba(203, 213, 225, 0.8) !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    html:not(.dark) #mobile-menu {
+      background-color: #ffffff !important;
+      border-bottom-color: #e2e8f0 !important;
+    }
+
+    html:not(.dark) .glass-card {
+      background: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    html:not(.dark) .section-alt-bg {
+      background-color: #f1f5f9 !important;
+    }
+
+    html:not(.dark) .bg-slate-900\/60,
+    html:not(.dark) .bg-slate-900\/80,
+    html:not(.dark) .bg-slate-900\/90,
+    html:not(.dark) .bg-slate-900,
+    html:not(.dark) .bg-slate-800\/90,
+    html:not(.dark) .bg-slate-800\/80,
+    html:not(.dark) .bg-slate-800 {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    html:not(.dark) .logo-text {
+      color: #0f172a !important;
+    }
+
+    html:not(.dark) input,
+    html:not(.dark) textarea {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) input::placeholder,
+    html:not(.dark) textarea::placeholder {
+      color: #64748b !important;
+    }
+
+    /* High contrast tech badges in Light Mode */
+    html:not(.dark) [class*="bg-blue-900"],
+    html:not(.dark) [class*="bg-indigo-900"],
+    html:not(.dark) [class*="bg-sky-900"],
+    html:not(.dark) [class*="bg-amber-900"],
+    html:not(.dark) [class*="bg-emerald-900"],
+    html:not(.dark) [class*="bg-emerald-950"],
+    html:not(.dark) [class*="bg-teal-900"],
+    html:not(.dark) [class*="bg-cyan-900"],
+    html:not(.dark) [class*="bg-purple-900"],
+    html:not(.dark) [class*="bg-orange-900"] {
+      background-color: #e2e8f0 !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    html:not(.dark) .text-blue-300,
+    html:not(.dark) .text-blue-400 { color: #1d4ed8 !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-indigo-300,
+    html:not(.dark) .text-indigo-400 { color: #4338ca !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-sky-300,
+    html:not(.dark) .text-sky-400 { color: #0369a1 !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-amber-300,
+    html:not(.dark) .text-amber-400 { color: #b45309 !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-emerald-300,
+    html:not(.dark) .text-emerald-400 { color: #047857 !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-teal-300,
+    html:not(.dark) .text-teal-400 { color: #0f766e !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-cyan-300,
+    html:not(.dark) .text-cyan-400 { color: #0e7490 !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-purple-300,
+    html:not(.dark) .text-purple-400 { color: #6b21a8 !important; font-weight: 700 !important; }
+
+    html:not(.dark) .text-orange-300,
+    html:not(.dark) .text-orange-400 { color: #c2410c !important; font-weight: 700 !important; }
+
+    /* Modal & Footer styling in light mode */
+    html:not(.dark) #philosophy-modal > div,
+    html:not(.dark) #demo-modal > div,
+    html:not(.dark) #sholatku-modal > div {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    html:not(.dark) footer {
+      background-color: #f1f5f9 !important;
+      border-top-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+
+    /* Glassmorphism Dark Mode */
+    .glass-nav {
+      background: rgba(8, 21, 41, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .glass-card {
+      background: rgba(13, 30, 54, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Float Animations */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(2deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(12px) rotate(-2deg); }
+    }
+    .animate-float { animation: floatSlow 5s ease-in-out infinite; }
+    .animate-float-reverse { animation: floatReverse 6s ease-in-out infinite; }
+
+    /* Pulse glow */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    .animate-pulse-glow { animation: pulseGlow 4s ease-in-out infinite; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #081529; }
+    ::-webkit-scrollbar-thumb { background: #1e3a6a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+    /* Nav active underline */
+    .nav-active { color: #3b82f6 !important; font-weight: 600; }
+    .nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 12px;
+      right: 12px;
+      height: 2px;
+      background: #3b82f6;
+      border-radius: 9999px;
+    }
+
+    /* Progress bar animation */
+    .progress-fill {
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    ::selection { background: #3b82f6; color: white; }
+
+    /* ====== LOADING SCREEN ====== */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #081529;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #loading-screen.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.25rem, 4vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 0 1rem;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: loaderPulse 1.5s ease-in-out infinite;
+    }
+    .loader-bar-track {
+      width: 200px;
+      height: 3px;
+      background: rgba(59, 130, 246, 0.15);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      border-radius: 999px;
+      animation: loaderProgress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    .loader-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: loaderGlow 2s ease-in-out infinite;
+    }
+    @keyframes loaderPulse {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+    @keyframes loaderProgress {
+      0% { width: 0%; }
+      60% { width: 70%; }
+      100% { width: 100%; }
+    }
+    @keyframes loaderGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.15); }
+    }
+
+    /* ====== SCROLL REVEAL ANIMATIONS ====== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-zoom {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-zoom.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Stagger children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stagger-children.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero entrance animations */
+    .hero-fade-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: heroEnterLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 1.9s;
+    }
+    .hero-fade-right {
+      opacity: 0;
+      transform: translateX(50px);
+      animation: heroEnterRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 2.1s;
+    }
+    .hero-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroEnterUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .hero-glow-in {
+      opacity: 0;
+      animation: heroGlowIn 1.5s ease-out forwards;
+      animation-delay: 2.3s;
+    }
+    @keyframes heroEnterLeft {
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes heroEnterRight {
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes heroEnterUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroGlowIn {
+      to { opacity: 1; }
+    }
+
+    /* Navbar scroll state */
+    .glass-nav {
+      transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .glass-nav.scrolled {
+      background: rgba(8, 21, 41, 0.95) !important;
+      box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.4);
+      border-bottom-color: rgba(59, 130, 246, 0.1) !important;
+    }
+    html:not(.dark) .glass-nav.scrolled {
+      background: rgba(255, 255, 255, 0.97) !important;
+      box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* Project card premium hover */
+    .project-card-hover {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.4s ease;
+    }
+    .project-card-hover:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2);
+    }
+
+
+
+    /* ====== SPOTLIGHT CARDS ====== */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.18), transparent 40%);
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* ====== LETTER TEXT REVEAL ====== */
+    .letter-span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(22px) rotateX(-30deg);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .letter-span.revealed {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+
+
+  </style>
+</head>
+
+<body class="antialiased min-h-screen">
+
+
+
+
+
+  <!-- ==================== PREMIUM LOADING SCREEN ==================== -->
+  <div id="loading-screen">
+    <div class="loader-glow"></div>
+    <div class="loader-logo">MOCHAMAD FACHREZI AZHARI</div>
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <p style="font-size: 0.7rem; color: rgba(148,163,184,0.6); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;">Building Digital Solutions</p>
+  </div>
+
+  <!-- ==================== NAVBAR (Fixed Top) ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- Logo Kiri - Custom Monogram MFA dengan Filosofi -->
+      <div onclick="openModal('philosophy-modal')" class="flex items-center gap-3 group cursor-pointer" title="Klik untuk melihat filosofi logo MFA">
+        <!-- Icon Monogram Geometric MFA -->
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 p-[2px] shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/50 group-hover:scale-105 transition duration-300">
+          <div class="w-full h-full bg-[#081529] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-blue-500/10 group-hover:bg-blue-500/20 transition"></div>
+            <!-- Monogram SVG Code (M + F + A Code Symbol) -->
+            <svg class="w-6 h-6 text-blue-400 group-hover:text-white transition duration-300" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- M (Mochamad) - Fondasi Kode -->
+              <path d="M8 28V12L16 20L24 12V28" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- F (Fachrezi) - Garis Inovasi & Software Dev -->
+              <path d="M24 18H33M24 12H35" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+              <!-- A (Azhari) & Titik Biru Real-Time Sync -->
+              <circle cx="33" cy="27" r="3" fill="#60A5FA" class="animate-pulse"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Brand Text & Badge -->
+        <div class="flex flex-col text-left">
+          <div class="flex items-center gap-1.5">
+            <span class="logo-text text-base sm:text-lg font-black tracking-widest text-white group-hover:text-blue-400 transition">MFA</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 font-extrabold border border-blue-500/20">DEV</span>
+          </div>
+          <span class="text-[10px] text-slate-400 font-medium tracking-wide group-hover:text-slate-200 transition">Mochamad Fachrezi Azhari</span>
+        </div>
+      </div>
+
+      <!-- Desktop Menu Tengah -->
+      <nav class="hidden lg:flex items-center gap-1" id="desktop-nav">
+        <a href="#beranda" data-section="beranda" data-i18n="nav_beranda" class="nav-link nav-active relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200">Beranda</a>
+        <a href="#tentang" data-section="tentang" data-i18n="nav_tentang" class="nav-link relative px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-blue-500 transition-all duration-200">Tentang</a>
+        <a href="#keahlian" data-section="keahlian" data-i18n="nav_keahlian" class="nav-link relative px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-blue-500 transition-all duration-200">Keahlian</a>
+        <a href="#proyek" data-section="proyek" data-i18n="nav_proyek" class="nav-link relative px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-blue-500 transition-all duration-200">Proyek</a>
+        <a href="#pengalaman" data-section="pengalaman" data-i18n="nav_pengalaman" class="nav-link relative px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-blue-500 transition-all duration-200">Pengalaman</a>
+        <a href="#pendidikan" data-section="pendidikan" data-i18n="nav_pendidikan" class="nav-link relative px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-blue-500 transition-all duration-200">Pendidikan</a>
+        <a href="#kontak" data-section="kontak" data-i18n="nav_kontak" class="nav-link relative px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-blue-500 transition-all duration-200">Kontak</a>
+      </nav>
+
+      <!-- Right Buttons -->
+      <div class="hidden lg:flex items-center gap-3">
+        <!-- Toggle Language EN / ID Button (Di Sebelah Kiri Tombol Tema) -->
+        <button
+          onclick="toggleLanguage()"
+          aria-label="Toggle Language EN/ID"
+          id="lang-btn-desktop"
+          title="Ganti Bahasa (Bahasa Indonesia / English)"
+          class="px-3 py-2 rounded-full bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-slate-200 transition-all duration-200 flex items-center gap-1.5 shadow-md active:scale-95 cursor-pointer"
+        >
+          <span class="text-sm">🌐</span>
+          <span id="lang-text-desktop" class="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full text-[11px] font-extrabold border border-blue-500/30">ID</span>
+        </button>
+
+        <!-- Toggle Dark / Light Mode Button -->
+        <button
+          onclick="toggleTheme()"
+          aria-label="Toggle Dark Mode"
+          id="theme-btn-desktop"
+          title="Ganti Tema Gelap / Terang"
+          class="p-2.5 rounded-full bg-slate-800/80 text-yellow-400 hover:bg-slate-700 border border-slate-700 transition-all duration-200 flex items-center justify-center shadow-md active:scale-90"
+        >
+          <span id="theme-icon-desktop" class="text-lg">☀️</span>
+        </button>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <div class="flex lg:hidden items-center gap-2">
+        <button onclick="toggleLanguage()" id="lang-btn-mobile" class="px-2.5 py-2 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 text-xs font-bold flex items-center gap-1">
+          <span>🌐</span>
+          <span id="lang-text-mobile" class="text-[11px] font-extrabold text-blue-400">ID</span>
+        </button>
+        <button onclick="toggleTheme()" id="theme-btn-mobile" class="p-2.5 rounded-xl bg-slate-800 text-yellow-400 border border-slate-700">
+          <span id="theme-icon-mobile">☀️</span>
+        </button>
+        <button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-800 text-white border border-slate-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 border-b border-slate-800 bg-[#081529]">
+      <div class="flex flex-col gap-2">
+        <a href="#beranda" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-blue-500 bg-blue-500/10">Beranda</a>
+        <a href="#tentang" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Tentang</a>
+        <a href="#keahlian" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Keahlian</a>
+        <a href="#proyek" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Proyek</a>
+        <a href="#pengalaman" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Pengalaman</a>
+        <a href="#pendidikan" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Pendidikan</a>
+        <a href="#kontak" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="beranda" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none parallax-slow hero-glow-in"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none parallax-slow hero-glow-in"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Hero Kiri (7 cols) -->
+        <div class="lg:col-span-7 space-y-6 text-left hero-fade-left">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium" data-i18n="hero_greeting">
+            👋 Halo, Saya
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Mochamad Fachrezi Azhari<span class="text-blue-500">.</span>
+            </h1>
+            <h2 class="text-2xl sm:text-3xl font-bold text-blue-500 leading-snug" data-i18n="hero_subhead">
+              Software Developer Student &amp; Mobile App Enthusiast
+            </h2>
+          </div>
+
+          <p class="text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl" data-i18n="hero_desc">
+            Saya adalah siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar tinggi, disiplin, bertanggung jawab, cepat beradaptasi, serta mampu bekerja secara individu maupun dalam tim.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#proyek" class="bg-blue-500 hover:bg-blue-600 active:scale-95 text-white font-semibold text-base px-6 py-3.5 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2 group">
+              <span data-i18n="hero_btn_projects">Lihat Proyek Saya</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-3 rounded-xl bg-slate-800/80 hover:bg-blue-600 hover:text-white text-slate-300 border border-slate-700/60 transition-all duration-200">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://instagram.com/ezzyazhari_" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-3 rounded-xl bg-slate-800/80 hover:bg-pink-600 hover:text-white text-slate-300 border border-slate-700/60 transition-all duration-200">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="mailto:mochamad.fachrezi8@smk.belajar.id" aria-label="Email" class="p-3 rounded-xl bg-slate-800/80 hover:bg-blue-600 hover:text-white text-slate-300 border border-slate-700/60 transition-all duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </a>
+            </div>
+            <div class="flex items-center gap-2 text-sm font-medium text-slate-400">
+              📍 Berbasis di Jakarta, Indonesia
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Kanan (5 cols) - Frame Foto Persis Referensi -->
+        <div class="lg:col-span-5 flex justify-center relative mt-6 lg:mt-0 hero-fade-right">
+          <div class="absolute -inset-4 bg-blue-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+
+          <div class="relative group">
+            <!-- Floating Card Atas -->
+            <div class="absolute -top-5 -left-5 z-20 bg-white text-slate-900 px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 animate-float">
+              <div class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">&lt;/&gt;</div>
+              <div class="text-left">
+                <p class="text-xs font-bold leading-tight">Software Dev</p>
+                <p class="text-[10px] text-slate-500">RPL Student</p>
+              </div>
+            </div>
+
+            <!-- Floating Card Bawah -->
+            <div class="absolute -bottom-5 -right-5 z-20 bg-white text-slate-900 px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 animate-float-reverse">
+              <div class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">📱</div>
+              <div class="text-left">
+                <p class="text-xs font-bold leading-tight">Flutter Dev</p>
+                <p class="text-[10px] text-slate-500">Mobile Expert</p>
+              </div>
+            </div>
+
+            <!-- Frame Foto: Border Putih Tebal + Rounded Corner Besar -->
+            <div class="relative p-2 bg-white rounded-[2.5rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] transform transition-transform duration-500 group-hover:scale-[1.02] group-hover:-rotate-1">
+              <div class="overflow-hidden rounded-[2.2rem] w-[290px] sm:w-[350px] h-[370px] sm:h-[440px] relative bg-slate-900">
+                <img src="profile.png" alt="Mochamad Fachrezi Profile Photo" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TENTANG SAYA ==================== -->
+  <section id="tentang" class="py-20 relative section-alt-bg" style="background: rgba(12,30,54,0.5);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal">
+        <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase" data-i18n="about_tag">Mengenal Lebih Dekat</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="about_title">Tentang Saya</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 reveal-zoom">
+          <div class="p-8 rounded-3xl glass-card">
+            <h3 class="text-2xl font-bold text-blue-500 mb-4 flex items-center gap-2" data-i18n="about_heading">
+              🎓 Siswa RPL Berdedikasi &amp; High-Speed Learner
+            </h3>
+            <p class="text-base leading-relaxed text-slate-300" data-i18n="about_p1">
+              Siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar yang tinggi, mampu bekerja sama dalam tim maupun secara mandiri, cepat beradaptasi, disiplin, bertanggung jawab, serta siap mengembangkan keterampilan untuk menghadapi dunia kerja dan memberikan kontribusi positif di lingkungan profesional.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4 stagger-children">
+          <div class="p-6 rounded-2xl glass-card text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 cursor-default">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl mx-auto mb-3">📱</div>
+            <h4 class="text-lg font-bold">Flutter Dev</h4>
+            <p class="text-xs text-slate-400 mt-1">Mobile Application</p>
+          </div>
+          <div class="p-6 rounded-2xl glass-card text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 cursor-default">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl mx-auto mb-3">🏫</div>
+            <h4 class="text-lg font-bold">Student RPL</h4>
+            <p class="text-xs text-slate-400 mt-1">SMK Jakarta Pusat 1</p>
+          </div>
+          <div class="p-6 rounded-2xl glass-card text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 cursor-default">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl mx-auto mb-3">🚀</div>
+            <h4 class="text-lg font-bold">CryptoKu</h4>
+            <p class="text-xs text-slate-400 mt-1">Featured Live App</p>
+          </div>
+          <div class="p-6 rounded-2xl glass-card text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 cursor-default">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl mx-auto mb-3">⚡</div>
+            <h4 class="text-lg font-bold">Fast Learner</h4>
+            <p class="text-xs text-slate-400 mt-1">Adaptable &amp; Agile</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KEAHLIAN ==================== -->
+  <section id="keahlian" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3 reveal">
+        <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">Kemampuan &amp; Kompetensi</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight split-heading">Keahlian Saya</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- FLOATING TECH STACK CLOUD -->
+      <div class="p-6 rounded-3xl glass-card border border-blue-500/20 shadow-xl reveal">
+        <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Interactive Tech Stack Cloud</p>
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-blue-500/40 text-blue-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float">
+            <span>💙</span> Flutter Framework
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-sky-500/40 text-sky-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float-reverse">
+            <span>🎯</span> Dart Language
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-orange-500/40 text-orange-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float">
+            <span>🌐</span> HTML5 / CSS3
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-amber-500/40 text-amber-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float-reverse">
+            <span>⚡</span> JavaScript (ES6+)
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-indigo-500/40 text-indigo-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float">
+            <span>🔗</span> CoinGecko REST API
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-teal-500/40 text-teal-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float-reverse">
+            <span>🧩</span> Provider State Management
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-emerald-500/40 text-emerald-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float">
+            <span>🎨</span> Material Design 3
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl bg-slate-900/90 border border-purple-500/40 text-purple-300 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg animate-float-reverse">
+            <span>🐙</span> Git &amp; GitHub
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Technical Skills -->
+        <div class="p-8 rounded-3xl glass-card reveal-left">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-blue-500/10 text-blue-500">💻</span> Technical Skills
+          </h3>
+          <div class="space-y-6">
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm font-medium"><span class="font-semibold">Flutter (Dasar)</span><span class="text-blue-400 font-bold">85%</span></div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50"><div class="progress-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 85%"></div></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm font-medium"><span class="font-semibold">Pemrograman Dasar (Dart, JS, HTML/CSS)</span><span class="text-blue-400 font-bold">90%</span></div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50"><div class="progress-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 90%"></div></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm font-medium"><span class="font-semibold">REST API Integration (CoinGecko)</span><span class="text-blue-400 font-bold">85%</span></div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50"><div class="progress-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 85%"></div></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm font-medium"><span class="font-semibold">Mobile UI/UX Design</span><span class="text-blue-400 font-bold">80%</span></div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50"><div class="progress-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 80%"></div></div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm font-medium"><span class="font-semibold">Git &amp; GitHub Version Control</span><span class="text-blue-400 font-bold">85%</span></div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50"><div class="progress-fill h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 85%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="p-8 rounded-3xl glass-card reveal-right">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-blue-500/10 text-blue-500">🌟</span> Soft Skills
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">👥</span><div><h4 class="text-sm font-bold">Kerja Sama Tim</h4><p class="text-[11px] text-slate-400 mt-0.5">Kolaborasi tim efektif</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">💬</span><div><h4 class="text-sm font-bold">Komunikasi yang Baik</h4><p class="text-[11px] text-slate-400 mt-0.5">Penyampaian ide jelas</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">⏱️</span><div><h4 class="text-sm font-bold">Manajemen Waktu</h4><p class="text-[11px] text-slate-400 mt-0.5">Skala prioritas disiplin</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">🚀</span><div><h4 class="text-sm font-bold">Cepat Belajar</h4><p class="text-[11px] text-slate-400 mt-0.5">Adaptif teknologi baru</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">🎯</span><div><h4 class="text-sm font-bold">Disiplin &amp; Bertanggung Jawab</h4><p class="text-[11px] text-slate-400 mt-0.5">Komitmen hasil terbaik</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">🔄</span><div><h4 class="text-sm font-bold">Mampu Beradaptasi</h4><p class="text-[11px] text-slate-400 mt-0.5">Fleksibel di berbagai situasi</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">🔍</span><div><h4 class="text-sm font-bold">Teliti dalam Bekerja</h4><p class="text-[11px] text-slate-400 mt-0.5">Detail-oriented pada kode</p></div></div>
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center gap-3 hover:border-blue-500/50 transition"><span class="text-2xl">🤝</span><div><h4 class="text-sm font-bold">Pelayanan Pelanggan</h4><p class="text-[11px] text-slate-400 mt-0.5">Fokus kepuasan pengguna</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROYEK ==================== -->
+  <section id="proyek" class="py-20 relative section-alt-bg" style="background: rgba(12,30,54,0.5);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Header Proyek -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 reveal">
+        <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase">Karya Software Engineer</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Proyek Utama</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- PROJECT STATISTICS ANIMATED BAR -->
+      <div class="p-6 sm:p-8 rounded-3xl glass-card border border-blue-500/20 shadow-2xl relative overflow-hidden reveal">
+        <div class="absolute -top-24 -left-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center relative z-10">
+          <div class="p-4 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition-all duration-300">
+            <div class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 font-poppins mb-1 counter-stat" data-target="2" data-suffix="+">0+</div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-300">Mobile Applications</p>
+          </div>
+
+          <div class="p-4 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition-all duration-300">
+            <div class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 font-poppins mb-1 counter-stat" data-target="1" data-suffix="">0</div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-300">Cryptocurrency Application</p>
+          </div>
+
+          <div class="p-4 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/40 transition-all duration-300">
+            <div class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 font-poppins mb-1 counter-stat" data-target="1" data-suffix="">0</div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-300">Islamic Application</p>
+          </div>
+
+          <div class="p-4 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition-all duration-300">
+            <div class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 font-poppins mb-1 counter-stat" data-target="100" data-suffix="%">0%</div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-300">Personal Projects</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS LIST -->
+      <div class="grid grid-cols-1 gap-12">
+        
+        <!-- PROJECT #1: CryptoKu -->
+        <div class="rounded-3xl glass-card overflow-hidden border border-slate-700/60 hover:border-blue-500/50 transition-all duration-500 shadow-2xl group reveal-left project-card-hover">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 lg:p-12">
+            
+            <div class="lg:col-span-7 space-y-6">
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="px-3.5 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                  Mobile Application
+                </span>
+                <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                  Cryptocurrency Tracker
+                </span>
+              </div>
+
+              <div>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white group-hover:text-blue-400 transition-colors">CryptoKu</h3>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-300 mt-3">
+                  CryptoKu adalah aplikasi mobile cryptocurrency yang dikembangkan menggunakan <strong class="text-blue-400">Flutter</strong> dan <strong class="text-blue-400">CoinGecko REST API</strong> untuk memantau harga cryptocurrency secara real-time.
+                </p>
+              </div>
+
+              <!-- Fitur Utama Grid -->
+              <div class="space-y-3">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Fitur Utama:</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Live Market Summary</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Search Cryptocurrency</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Favorite Coin</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Filter Cryptocurrency</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Dark Mode &amp; Light Mode</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Real-Time Price Tracking</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Modern UI/UX</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>CoinGecko API Integration</div>
+                </div>
+              </div>
+
+              <!-- Teknologi Badges -->
+              <div class="space-y-2">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Teknologi:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-lg bg-blue-900/40 text-blue-300 text-xs font-semibold border border-blue-500/30">Flutter</span>
+                  <span class="px-3 py-1 rounded-lg bg-blue-900/40 text-blue-300 text-xs font-semibold border border-blue-500/30">Dart</span>
+                  <span class="px-3 py-1 rounded-lg bg-indigo-900/40 text-indigo-300 text-xs font-semibold border border-indigo-500/30">REST API</span>
+                  <span class="px-3 py-1 rounded-lg bg-sky-900/40 text-sky-300 text-xs font-semibold border border-sky-500/30">Provider</span>
+                  <span class="px-3 py-1 rounded-lg bg-amber-900/40 text-amber-300 text-xs font-semibold border border-amber-500/30">CoinGecko API</span>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button onclick="openModal('demo-modal')" class="bg-blue-500 hover:bg-blue-600 active:scale-95 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2">⚡ Live Demo</button>
+                <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" class="font-semibold text-sm px-6 py-3 rounded-xl border bg-slate-800/80 hover:bg-slate-700 border-slate-700 text-white transition-all flex items-center gap-2">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center">
+              <div class="relative group w-full max-w-sm">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 bg-slate-900">
+                  <img src="cryptoku-mockup.png" alt="CryptoKu App Showcase" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT #2: SholatKu -->
+        <div class="rounded-3xl glass-card overflow-hidden border border-slate-700/60 hover:border-emerald-500/50 transition-all duration-500 shadow-2xl group reveal-right project-card-hover">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 lg:p-12">
+            
+            <div class="lg:col-span-7 space-y-6">
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Islamic Mobile Application
+                </span>
+                <span class="px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-300 text-xs font-bold border border-teal-500/20">
+                  38 Provinsi Indonesia
+                </span>
+              </div>
+
+              <div>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">SholatKu</h3>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-300 mt-3">
+                  SholatKu adalah aplikasi jadwal sholat modern berbasis Flutter yang membantu pengguna mengetahui waktu sholat dengan mudah melalui pemilihan 38 provinsi di Indonesia tanpa menggunakan GPS. Aplikasi dirancang dengan tampilan islami modern, sederhana, dan mudah digunakan.
+                </p>
+              </div>
+
+              <!-- Fitur Utama Grid -->
+              <div class="space-y-3">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Fitur Utama:</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Jadwal Sholat 38 Provinsi Indonesia</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Pemilihan Provinsi Manual (Tanpa GPS)</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Countdown Waktu Sholat Berikutnya</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Notifikasi Waktu Sholat</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Suara Adzan Otomatis</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Dark Mode &amp; Light Mode</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Landing Page Modern</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>User Friendly Interface</div>
+                  <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>Tampilan Responsif</div>
+                </div>
+              </div>
+
+              <!-- Teknologi Badges -->
+              <div class="space-y-2">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Teknologi:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-lg bg-emerald-900/40 text-emerald-300 text-xs font-semibold border border-emerald-500/30">Flutter</span>
+                  <span class="px-3 py-1 rounded-lg bg-emerald-900/40 text-emerald-300 text-xs font-semibold border border-emerald-500/30">Dart</span>
+                  <span class="px-3 py-1 rounded-lg bg-teal-900/40 text-teal-300 text-xs font-semibold border border-teal-500/30">Local Storage</span>
+                  <span class="px-3 py-1 rounded-lg bg-cyan-900/40 text-cyan-300 text-xs font-semibold border border-cyan-500/30">Notification Service</span>
+                  <span class="px-3 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 text-xs font-semibold border border-emerald-400/40">Material Design 3</span>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button onclick="openModal('sholatku-modal')" class="bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition-all flex items-center gap-2">🌙 Live Demo</button>
+                <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" class="font-semibold text-sm px-6 py-3 rounded-xl border bg-slate-800/80 hover:bg-slate-700 border-slate-700 text-white transition-all flex items-center gap-2">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Showcase 3D Smartphone Mockup SholatKu -->
+            <div class="lg:col-span-5 flex justify-center items-center relative py-6">
+              
+              <!-- 1. Background Radial Glow & HUD Rings -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <!-- Radial Glow -->
+                <div class="w-80 h-80 bg-gradient-to-tr from-[#00E5A8]/20 via-[#3B82F6]/20 to-[#00FFFF]/20 rounded-full blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <!-- HUD Tech Circle 1 (Rotating Dashed) -->
+                <div class="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-dashed border-cyan-400/25 animate-[spin_40s_linear_infinite]"></div>
+                
+                <!-- HUD Tech Circle 2 (Pulsing Glow) -->
+                <div class="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-emerald-400/20 animate-pulse"></div>
+
+                <!-- Floating Particle Accents -->
+                <div class="absolute -top-4 -right-4 w-3 h-3 rounded-full bg-cyan-400 blur-xs animate-ping"></div>
+                <div class="absolute bottom-6 -left-4 w-2 h-2 rounded-full bg-emerald-400 blur-xs animate-bounce"></div>
+              </div>
+
+              <!-- 2. Smartphone 3D Mockup Device -->
+              <div class="relative w-full max-w-[310px] sm:max-w-[340px] transform rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-700 ease-out">
+                
+                <!-- Floating Glass Card Badge Top -->
+                <div class="absolute -top-5 -left-6 z-30 bg-slate-900/90 text-white px-3.5 py-2 rounded-2xl shadow-xl border border-emerald-500/40 backdrop-blur-md flex items-center gap-2.5 animate-float">
+                  <div class="w-7 h-7 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-xs border border-emerald-500/30">🕌</div>
+                  <div class="text-left">
+                    <p class="text-xs font-bold leading-tight text-emerald-300">SholatKu App</p>
+                    <p class="text-[10px] text-slate-400">38 Provinsi ID</p>
+                  </div>
+                </div>
+
+                <!-- Floating Glass Card Badge Bottom -->
+                <div class="absolute -bottom-5 -right-6 z-30 bg-slate-900/90 text-white px-3.5 py-2 rounded-2xl shadow-xl border border-cyan-500/40 backdrop-blur-md flex items-center gap-2.5 animate-float-reverse">
+                  <div class="w-7 h-7 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-xs border border-cyan-500/30">🔔</div>
+                  <div class="text-left">
+                    <p class="text-xs font-bold leading-tight text-cyan-300">Adzan Auto</p>
+                    <p class="text-[10px] text-slate-400">Notification</p>
+                  </div>
+                </div>
+
+                <!-- Outer Black Bezel Phone Shell -->
+                <div class="p-3.5 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 rounded-[3rem] border-2 border-slate-700/80 shadow-[0_25px_60px_-15px_rgba(0,229,168,0.35)] relative overflow-hidden">
+                  
+                  <!-- Screen Frame -->
+                  <div class="relative rounded-[2.3rem] overflow-hidden bg-[#081529] border border-slate-800 text-white p-4 space-y-3 shadow-inner">
+                    
+                    <!-- Top Notch / Dynamic Island -->
+                    <div class="w-24 h-4 bg-slate-950 rounded-full mx-auto flex items-center justify-center gap-2 border border-slate-800 mb-1">
+                      <div class="w-2 h-2 rounded-full bg-slate-800"></div>
+                      <div class="w-1.5 h-1.5 rounded-full bg-emerald-500/80"></div>
+                    </div>
+
+                    <!-- Screen Header -->
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
+                      <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#00E5A8] to-[#3B82F6] flex items-center justify-center text-sm shadow-md text-slate-950 font-bold">
+                          🕌
+                        </div>
+                        <div>
+                          <h4 class="font-extrabold text-white text-sm tracking-wide">SholatKu</h4>
+                          <span class="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">📍 DKI Jakarta</span>
+                        </div>
+                      </div>
+                      <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 text-[9px] font-extrabold border border-cyan-500/20">
+                        Material 3
+                      </span>
+                    </div>
+
+                    <!-- Active Prayer Widget Card -->
+                    <div class="p-3.5 rounded-2xl bg-gradient-to-br from-emerald-950/90 via-slate-900 to-slate-950 border border-emerald-500/40 relative overflow-hidden shadow-lg space-y-2">
+                      <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl"></div>
+                      <div class="flex justify-between items-center text-[10px]">
+                        <span class="text-emerald-400 font-extrabold tracking-wider uppercase flex items-center gap-1">
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                          Sholat Berikutnya
+                        </span>
+                        <span class="text-slate-400 font-medium">12 Agustus 2026</span>
+                      </div>
+                      
+                      <div class="flex justify-between items-baseline pt-0.5">
+                        <div>
+                          <p class="text-[11px] text-slate-300 font-medium">☀️ Sholat Dzuhur</p>
+                          <p class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300">12:04 <span class="text-xs font-semibold text-slate-400">WIB</span></p>
+                        </div>
+                        <div class="text-right">
+                          <p class="text-[9px] text-slate-400">Countdown</p>
+                          <p class="text-xs font-black text-amber-400 px-2 py-0.5 rounded-md bg-amber-400/10 border border-amber-400/20">01:42:15</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Daily Prayer Schedule List -->
+                    <div class="space-y-1.5 text-xs">
+                      <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-1">Jadwal Sholat Hari Ini:</p>
+
+                      <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+                        <span class="text-slate-300 font-medium flex items-center gap-2"><span class="text-amber-400">🌅</span> Subuh</span>
+                        <span class="font-bold text-slate-300">04:42 WIB</span>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-gradient-to-r from-emerald-950/80 to-teal-950/80 border border-emerald-500/50 flex items-center justify-between text-emerald-300 shadow-md">
+                        <span class="font-extrabold flex items-center gap-2"><span class="text-emerald-400">☀️</span> Dzuhur (Berikutnya)</span>
+                        <span class="font-black text-emerald-300">12:04 WIB</span>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+                        <span class="text-slate-300 font-medium flex items-center gap-2"><span class="text-amber-300">🌤️</span> Ashar</span>
+                        <span class="font-bold text-slate-300">15:25 WIB</span>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+                        <span class="text-slate-300 font-medium flex items-center gap-2"><span class="text-orange-400">🌇</span> Maghrib</span>
+                        <span class="font-bold text-slate-300">18:05 WIB</span>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+                        <span class="text-slate-300 font-medium flex items-center gap-2"><span class="text-indigo-400">🌙</span> Isya</span>
+                        <span class="font-bold text-slate-300">19:18 WIB</span>
+                      </div>
+                    </div>
+
+                    <!-- Screen Footer -->
+                    <div class="flex items-center justify-between pt-2 text-[10px] text-slate-400 border-t border-slate-800/80">
+                      <span class="flex items-center gap-1 text-emerald-400 font-medium">🔔 Adzan Auto</span>
+                      <span class="flex items-center gap-1 text-cyan-300 font-medium">🌙 Dark Mode</span>
+                    </div>
+
+                    <!-- Realistic Screen Reflection Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none"></div>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PENGALAMAN ==================== -->
+  <section id="pengalaman" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal">
+        <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase" data-i18n="exp_tag">Jejak Langkah</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="exp_title">Pengalaman</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto relative">
+        <div class="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-indigo-500 to-blue-600 sm:-translate-x-1/2"></div>
+
+        <div class="space-y-12 stagger-children">
+          <!-- 1 Thrifting -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-9 h-9 rounded-full bg-blue-500 text-white border-4 border-[#081529] shadow-lg flex items-center justify-center font-bold text-sm z-10">1</div>
+            <div class="w-full sm:w-1/2 pl-16 sm:pl-0 sm:pr-12 sm:text-right">
+              <div class="p-6 sm:p-8 rounded-3xl glass-card hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex flex-wrap items-center gap-2 mb-2 sm:justify-end">
+                  <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20" data-i18n="exp_1_badge">Wirausaha</span>
+                  <span class="text-xs text-slate-400 font-semibold">📅 Agustus 2024 – Mei 2025</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="exp_1_title">Bisnis Jual Beli Pakaian Bekas Thrifting</h3>
+                <p class="text-sm leading-relaxed text-slate-300 mb-4" data-i18n="exp_1_desc">Menjalankan usaha jual beli pakaian bekas (thrifting) dengan fokus pada penyediaan produk berkualitas, layak pakai, dan mengikuti tren fashion. Bertanggung jawab dalam pemilihan produk, penentuan harga, promosi melalui media sosial, pengelolaan pesanan, dan pelayanan pelanggan.</p>
+                <div class="flex flex-wrap gap-1.5 sm:justify-end">
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#ManajemenBisnis</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#PromosiMedsos</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#CustomerService</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 IL Sogno -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-9 h-9 rounded-full bg-blue-500 text-white border-4 border-[#081529] shadow-lg flex items-center justify-center font-bold text-sm z-10">2</div>
+            <div class="w-full sm:w-1/2 pl-16 sm:pl-12 sm:ml-auto">
+              <div class="p-6 sm:p-8 rounded-3xl glass-card hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20" data-i18n="exp_2_badge">Operasional &amp; Kebersihan</span>
+                  <span class="text-xs text-slate-400 font-semibold">📅 Juni 2025 – Juli 2025</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">IL Sogno</h3>
+                <p class="text-sm leading-relaxed text-slate-300 mb-4" data-i18n="exp_2_desc">Bertanggung jawab membersihkan kaca pada bangunan atau area kerja agar tetap bersih dan memenuhi standar kebersihan. Memiliki ketelitian, disiplin, dan mampu bekerja secara mandiri maupun dalam tim.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Kedisiplinan</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Ketelitian</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#KerjaTim</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 CryptoKu Dev -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-9 h-9 rounded-full bg-blue-500 text-white border-4 border-[#081529] shadow-lg flex items-center justify-center font-bold text-sm z-10">3</div>
+            <div class="w-full sm:w-1/2 pl-16 sm:pl-0 sm:pr-12 sm:text-right">
+              <div class="p-6 sm:p-8 rounded-3xl glass-card hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex flex-wrap items-center gap-2 mb-2 sm:justify-end">
+                  <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20" data-i18n="exp_3_badge">Project Utama</span>
+                  <span class="text-xs text-slate-400 font-semibold">📅 Juli 2026 – Agustus 2026</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="exp_3_title">Pengembangan Aplikasi CryptoKu</h3>
+                <p class="text-sm leading-relaxed text-slate-300 mb-4" data-i18n="exp_3_desc">Mengembangkan aplikasi mobile CryptoKu sebagai platform pemantauan harga cryptocurrency secara real-time. Bertanggung jawab dalam analisis kebutuhan, perancangan UI/UX modern, pengembangan fitur utama, integrasi CoinGecko REST API, serta pengujian aplikasi.</p>
+                <div class="flex flex-wrap gap-1.5 sm:justify-end">
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Flutter</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Dart</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#CoinGeckoAPI</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 SholatKu Dev -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+            <div class="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-9 h-9 rounded-full bg-emerald-500 text-white border-4 border-[#081529] shadow-lg flex items-center justify-center font-bold text-sm z-10">4</div>
+            <div class="w-full sm:w-1/2 pl-16 sm:pl-12 sm:ml-auto">
+              <div class="p-6 sm:p-8 rounded-3xl glass-card hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-1">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20" data-i18n="exp_4_badge">Project Utama</span>
+                  <span class="text-xs text-slate-400 font-semibold">📅 Juli 2026 – Agustus 2026</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="exp_4_title">Pengembangan Aplikasi SholatKu</h3>
+                <p class="text-sm leading-relaxed text-slate-300 mb-4" data-i18n="exp_4_desc">Mengembangkan aplikasi mobile SholatKu sebagai platform informasi jadwal sholat modern untuk masyarakat Indonesia. Bertanggung jawab dalam proses analisis kebutuhan, perancangan UI/UX islami modern, pengembangan fitur utama seperti jadwal sholat 38 provinsi Indonesia, notifikasi waktu sholat, countdown sholat berikutnya, suara adzan otomatis, mode terang/gelap, serta pengujian dan penyempurnaan aplikasi untuk memberikan pengalaman pengguna yang optimal.</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Flutter</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Dart</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#Notification</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">#UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PENDIDIKAN ==================== -->
+  <section id="pendidikan" class="py-20 relative section-alt-bg" style="background: rgba(12,30,54,0.5);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal">
+        <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase" data-i18n="edu_tag">Latar Belakang Akademis</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="edu_title">Pendidikan</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto reveal-zoom">
+        <div class="p-8 sm:p-10 rounded-3xl glass-card">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-400" data-i18n="edu_level">Sekolah Menengah Kejuruan</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold mt-1" data-i18n="edu_school">SMK Jakarta Pusat 1</h3>
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-blue-500/10 text-blue-400 font-bold text-sm border border-blue-500/20">2024 - 2027</div>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+              <p class="text-lg font-bold text-white" data-i18n="edu_major">Jurusan Rekayasa Perangkat Lunak (RPL)</p>
+            </div>
+            <p class="text-sm sm:text-base leading-relaxed text-slate-300 pl-6 border-l-2 border-slate-800" data-i18n="edu_desc">
+              Fokus mempelajari dasar-dasar pemrograman, logika algoritma, pengembangan aplikasi mobile (Flutter), pemrograman web (HTML, CSS, JavaScript), pengelolaan basis data, serta metode rekayasa perangkat lunak.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KONTAK ==================== -->
+  <section id="kontak" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal">
+        <span class="text-blue-500 text-sm font-semibold tracking-wider uppercase" data-i18n="contact_tag">Hubungi Saya</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="contact_title">Kontak</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 space-y-4 reveal-left">
+          <a href="https://wa.me/6281400528161" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl glass-card flex items-center gap-4 hover:border-emerald-500/40 transition duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </div>
+            <div><p class="text-xs text-slate-400 font-medium">WhatsApp Direct</p><p class="text-base font-bold">+62 814-0052-8161</p></div>
+          </a>
+          <a href="mailto:mochamad.fachrezi8@smk.belajar.id" class="p-6 rounded-2xl glass-card flex items-center gap-4 hover:border-blue-500/40 transition duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div><p class="text-xs text-slate-400 font-medium">Email Resmi</p><p class="text-sm sm:text-base font-bold break-all">mochamad.fachrezi8@smk.belajar.id</p></div>
+          </a>
+          <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl glass-card flex items-center gap-4 hover:border-purple-500/40 transition duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div><p class="text-xs text-slate-400 font-medium">GitHub Account</p><p class="text-base font-bold">github.com/eziganteng06-lab</p></div>
+          </a>
+          <a href="https://instagram.com/ezzyazhari_" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl glass-card flex items-center gap-4 hover:border-pink-500/40 transition duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <div><p class="text-xs text-slate-400 font-medium">Instagram Account</p><p class="text-base font-bold">@ezzyazhari_</p></div>
+          </a>
+          <div class="p-6 rounded-2xl glass-card flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div><p class="text-xs text-slate-400 font-medium" data-i18n="contact_domisili">Domisili &amp; Lokasi</p><p class="text-base font-bold">Jakarta, Indonesia</p></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 reveal-right">
+          <div class="p-8 sm:p-10 rounded-3xl glass-card">
+            <h3 class="text-2xl font-bold mb-6" data-i18n="contact_form_title">Kirim Pesan</h3>
+
+            <!-- Success Alert / Toast -->
+            <div id="form-toast" class="hidden p-6 sm:p-8 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3 mb-4">
+              <div class="text-4xl">🎉</div>
+              <h4 class="text-xl font-bold text-emerald-400">Pesan Berhasil Terkirim!</h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Terima kasih, <strong id="sender-name-display" class="text-white"></strong>! Pesan Anda telah berhasil dikirim ke <strong class="text-blue-400">mochamad.fachrezi8@smk.belajar.id</strong>.
+              </p>
+              <div class="pt-2">
+                <button onclick="resetContactForm()" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-semibold text-xs rounded-xl transition shadow-lg shadow-emerald-500/25">
+                  🔄 Kirim Pesan Lainnya
+                </button>
+              </div>
+            </div>
+
+            <!-- Error Alert -->
+            <div id="form-error" class="hidden p-6 rounded-2xl bg-red-500/10 border border-red-500/30 text-center space-y-3 mb-4">
+              <div class="text-3xl">⚠️</div>
+              <h4 class="text-lg font-bold text-red-400">Gagal Mengirim Pesan</h4>
+              <p id="form-error-msg" class="text-xs text-slate-300 leading-relaxed">Terjadi kendala jaringan saat mengirim pesan. Silakan coba lagi atau kirim via aplikasi email.</p>
+              <div class="flex flex-wrap items-center justify-center gap-3 pt-1">
+                <button onclick="submitFormDirectMail()" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 active:scale-95 text-white font-semibold text-xs rounded-xl transition">
+                  📧 Kirim via Email App
+                </button>
+                <button onclick="hideFormError()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs rounded-xl transition">
+                  Tutup
+                </button>
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form id="contact-form" onsubmit="submitForm(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="form-name" class="block text-xs font-semibold text-slate-300 mb-1"><span data-i18n="form_name_label">Nama Lengkap</span> <span class="text-red-400">*</span></label>
+                  <input type="text" id="form-name" name="name" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/80 text-white text-sm outline-none focus:border-blue-500 transition placeholder:text-slate-500" />
+                </div>
+                <div>
+                  <label for="form-email" class="block text-xs font-semibold text-slate-300 mb-1"><span data-i18n="form_email_label">Alamat Email</span> <span class="text-red-400">*</span></label>
+                  <input type="email" id="form-email" name="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/80 text-white text-sm outline-none focus:border-blue-500 transition placeholder:text-slate-500" />
+                </div>
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-xs font-semibold text-slate-300 mb-1"><span data-i18n="form_msg_label">Isi Pesan</span> <span class="text-red-400">*</span></label>
+                <textarea id="form-message" name="message" rows="4" required placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/80 text-white text-sm outline-none focus:border-blue-500 transition resize-none placeholder:text-slate-500"></textarea>
+              </div>
+              <button type="submit" id="submit-btn" class="w-full bg-blue-500 hover:bg-blue-600 active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-blue-500/30 transition duration-200 flex items-center justify-center gap-2" data-i18n="btn_send">
+                🚀 Kirim Pesan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-10 border-t border-slate-800/80 reveal" style="background: #050e1c;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <p class="text-base font-bold" data-i18n="footer_copy">© 2026 Mochamad Fachrezi Azhari</p>
+      <p class="text-xs text-blue-400 font-medium uppercase tracking-widest" data-i18n="footer_tagline">Building Digital Solutions For The Future</p>
+      <div class="flex items-center justify-center gap-4 pt-2">
+        <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-xl bg-slate-800/90 hover:bg-blue-600 text-slate-300 hover:text-white transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://instagram.com/ezzyazhari_" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2.5 rounded-xl bg-slate-800/90 hover:bg-pink-600 text-slate-300 hover:text-white transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="mailto:mochamad.fachrezi8@smk.belajar.id" aria-label="Email" class="p-2.5 rounded-xl bg-slate-800/90 hover:bg-blue-600 text-slate-300 hover:text-white transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+      <div class="pt-2 flex items-center justify-center gap-6 text-xs text-slate-400">
+        <a href="#beranda" class="hover:text-white transition">Beranda</a>
+        <a href="#tentang" class="hover:text-white transition">Tentang</a>
+        <a href="#proyek" class="hover:text-white transition">Proyek</a>
+        <a href="#kontak" class="hover:text-white transition">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LOGO PHILOSOPHY MODAL ==================== -->
+  <div id="philosophy-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="max-w-xl w-full p-6 sm:p-8 rounded-3xl border border-slate-700 shadow-2xl space-y-6" style="background: #0d1e36;">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-700">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-black text-lg">MFA</div>
+          <div>
+            <h3 class="text-xl font-bold text-white">Filosofi Logo Monogram MFA</h3>
+            <p class="text-xs text-blue-400 font-medium">Mochamad Fachrezi Azhari</p>
+          </div>
+        </div>
+        <button onclick="closeModal('philosophy-modal')" class="text-slate-400 hover:text-white text-xl font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-left text-slate-300 text-sm">
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+          <span class="text-2xl font-black text-blue-500">M</span>
+          <div>
+            <h4 class="font-bold text-white">Mochamad (Fondasi Logika & Kode)</h4>
+            <p class="text-xs text-slate-300 mt-0.5">Struktur garis ganda melambangkan prinsip utama rekayasa perangkat lunak: fondasi kode yang bersih, kokoh, dan terstruktur rapi.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+          <span class="text-2xl font-black text-blue-400">F</span>
+          <div>
+            <h4 class="font-bold text-white">Fachrezi (Inovasi & Eksekusi Cepat)</h4>
+            <p class="text-xs text-slate-300 mt-0.5">Garis horizontal yang terhubung melambangkan kecepatan adaptasi (*fast learner*), keterampilan Flutter mobile dev, dan eksekusi solusi digital.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+          <span class="text-2xl font-black text-indigo-400">A</span>
+          <div>
+            <h4 class="font-bold text-white">Azhari (Puncak Kualitas & Visi Masa Depan)</h4>
+            <p class="text-xs text-slate-300 mt-0.5">Sudut puncak geometris melambangkan standar hasil karya berkelas internasional dan dedikasi profesional berkesinambungan.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-start gap-3">
+          <span class="text-2xl">🔵</span>
+          <div>
+            <h4 class="font-bold text-blue-400">Titik Aksen Biru (Pulsing Dot)</h4>
+            <p class="text-xs text-slate-300 mt-0.5">Melambangkan integrasi data *Real-Time* (seperti project CryptoKu) dan konektivitas digital tanpa batas.</p>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="closeModal('philosophy-modal')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl text-sm transition">
+        Mengerti Filosofi Logo
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== DEMO MODAL CRYPTOKU ==================== -->
+  <div id="demo-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="max-w-xl w-full p-6 rounded-3xl border border-slate-700 shadow-2xl space-y-6" style="background: #0d1e36;">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-700">
+        <div class="flex items-center gap-2"><span class="text-xl">📱</span><h3 class="text-xl font-bold">CryptoKu Live Simulator</h3></div>
+        <button onclick="closeModal('demo-modal')" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-blue-400">COINGECKO REST API LIVE</span>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">STATUS: ONLINE</span>
+        </div>
+        <div class="space-y-2">
+          <div class="p-3 rounded-xl bg-slate-800/90 flex items-center justify-between"><div class="flex items-center gap-3"><span class="text-xl">₿</span><div><p class="text-sm font-bold">Bitcoin (BTC)</p><p class="text-[10px] text-slate-400">Market Cap: #1</p></div></div><div class="text-right"><p class="text-sm font-bold">$94,250.00</p><p class="text-xs text-emerald-400 font-semibold">+3.45%</p></div></div>
+          <div class="p-3 rounded-xl bg-slate-800/90 flex items-center justify-between"><div class="flex items-center gap-3"><span class="text-xl">Ξ</span><div><p class="text-sm font-bold">Ethereum (ETH)</p><p class="text-[10px] text-slate-400">Market Cap: #2</p></div></div><div class="text-right"><p class="text-sm font-bold">$3,420.50</p><p class="text-xs text-emerald-400 font-semibold">+1.82%</p></div></div>
+          <div class="p-3 rounded-xl bg-slate-800/90 flex items-center justify-between"><div class="flex items-center gap-3"><span class="text-xl">◎</span><div><p class="text-sm font-bold">Solana (SOL)</p><p class="text-[10px] text-slate-400">Market Cap: #4</p></div></div><div class="text-right"><p class="text-sm font-bold">$198.75</p><p class="text-xs text-emerald-400 font-semibold">+5.12%</p></div></div>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl text-center text-sm">Lihat Code Source</a>
+        <button onclick="closeModal('demo-modal')" class="px-6 bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-3 rounded-xl text-sm">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DEMO MODAL SHOLATKU ==================== -->
+  <div id="sholatku-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="max-w-xl w-full p-6 rounded-3xl border border-emerald-600/40 shadow-2xl space-y-6" style="background: #061e19;">
+      <div class="flex justify-between items-center pb-4 border-b border-emerald-800/60">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🕌</span>
+          <h3 class="text-xl font-bold text-white">SholatKu App Simulator</h3>
+        </div>
+        <button onclick="closeModal('sholatku-modal')" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/90 border border-emerald-500/30 space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-400">38 PROVINSI INDONESIA (TANPA GPS)</span>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">MODE: OFFLINE LOCAL STORAGE</span>
+        </div>
+        <div class="space-y-2">
+          <div class="p-3 rounded-xl bg-slate-800/90 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">📍</span>
+              <div>
+                <p class="text-sm font-bold text-white">Pemilihan Provinsi Manual</p>
+                <p class="text-[10px] text-slate-400">DKI Jakarta (Default)</p>
+              </div>
+            </div>
+            <span class="text-xs text-emerald-400 font-semibold">38 Provinsi Siap</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/70 border border-emerald-500/30 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">🕌</span>
+              <div>
+                <p class="text-sm font-bold text-emerald-300">Sholat Dzuhur (Berikutnya)</p>
+                <p class="text-[10px] text-slate-300">Suara Adzan Otomatis &amp; Notifikasi Aktif</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="text-sm font-bold text-emerald-300">12:04 WIB</p>
+              <p class="text-xs text-amber-400 font-semibold">-01:42:15</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://github.com/eziganteng06-lab" target="_blank" rel="noopener noreferrer" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl text-center text-sm">Lihat Source Code GitHub</a>
+        <button onclick="closeModal('sholatku-modal')" class="px-6 bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-3 rounded-xl text-sm">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // Theme Switcher (Gelap / Terang)
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        document.getElementById('theme-icon-desktop').textContent = '🌙';
+        if (document.getElementById('theme-icon-mobile')) {
+          document.getElementById('theme-icon-mobile').textContent = '🌙';
+        }
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        document.getElementById('theme-icon-desktop').textContent = '☀️';
+        if (document.getElementById('theme-icon-mobile')) {
+          document.getElementById('theme-icon-mobile').textContent = '☀️';
+        }
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load Saved Theme
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      if (document.getElementById('theme-icon-desktop')) document.getElementById('theme-icon-desktop').textContent = '🌙';
+      if (document.getElementById('theme-icon-mobile')) document.getElementById('theme-icon-mobile').textContent = '🌙';
+    }
+
+    // ====== LANGUAGE SWITCHER (ID / EN) ======
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    const translationsMap = {
+      // Navbar Links
+      'nav_beranda': { id: 'Beranda', en: 'Home' },
+      'nav_tentang': { id: 'Tentang', en: 'About' },
+      'nav_keahlian': { id: 'Keahlian', en: 'Skills' },
+      'nav_proyek': { id: 'Proyek', en: 'Projects' },
+      'nav_pengalaman': { id: 'Pengalaman', en: 'Experience' },
+      'nav_pendidikan': { id: 'Pendidikan', en: 'Education' },
+      'nav_kontak': { id: 'Kontak', en: 'Contact' },
+
+      // Hero Section
+      'hero_greeting': { id: '👋 Halo, Saya', en: "👋 Hello, I'm" },
+      'hero_subhead': { id: 'Software Developer Student & Mobile App Enthusiast', en: 'Software Developer Student & Mobile App Enthusiast' },
+      'hero_desc': { 
+        id: 'Saya adalah siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar tinggi, disiplin, bertanggung jawab, cepat beradaptasi, serta mampu bekerja secara individu maupun dalam tim.',
+        en: 'I am a Software Engineering student at SMK Jakarta Pusat 1 passionate about IT, mobile app development, programming, and web solutions. Fast learner, disciplined, responsible, adaptable, and effective working individually or in teams.'
+      },
+      'hero_btn_projects': { id: 'Lihat Proyek Saya', en: 'View My Projects' },
+
+      // About Section
+      'about_tag': { id: 'Mengenal Lebih Dekat', en: 'Get To Know Me' },
+      'about_title': { id: 'Tentang Saya', en: 'About Me' },
+      'about_heading': { id: '🎓 Siswa RPL Berdedikasi & High-Speed Learner', en: '🎓 Dedicated RPL Student & High-Speed Learner' },
+      'about_p1': { 
+        id: 'Siswa SMK Jakarta Pusat 1 jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki minat di bidang teknologi informasi, khususnya pengembangan aplikasi, pemrograman, dan website. Memiliki semangat belajar yang tinggi, mampu bekerja sama dalam tim maupun secara mandiri, cepat beradaptasi, disiplin, bertanggung jawab, serta siap mengembangkan keterampilan untuk menghadapi dunia kerja dan memberikan kontribusi positif di lingkungan profesional.',
+        en: 'A Software Engineering student at SMK Jakarta Pusat 1 passionate about information technology, mobile application development, programming, and websites. Highly motivated, adaptable, disciplined, responsible, and equipped to contribute positively in professional environments.'
+      },
+
+      // Experience Section
+      'exp_tag': { id: 'Jejak Langkah', en: 'Career Path & Projects' },
+      'exp_title': { id: 'Pengalaman', en: 'Experience' },
+      'exp_1_badge': { id: 'Wirausaha', en: 'Entrepreneurship' },
+      'exp_1_title': { id: 'Bisnis Jual Beli Pakaian Bekas Thrifting', en: 'Thrifting Fashion Business' },
+      'exp_1_desc': { id: 'Menjalankan usaha jual beli pakaian bekas (thrifting) dengan fokus pada penyediaan produk berkualitas, layak pakai, dan mengikuti tren fashion. Bertanggung jawab dalam pemilihan produk, penentuan harga, promosi melalui media sosial, pengelolaan pesanan, dan pelayanan pelanggan.', en: 'Managed an independent thrifting business focused on product selection, pricing strategy, social media promotion, order fulfillment, and customer service.' },
+      'exp_2_badge': { id: 'Operasional & Kebersihan', en: 'Operations & Maintenance' },
+      'exp_2_desc': { id: 'Bertanggung jawab membersihkan kaca pada bangunan atau area kerja agar tetap bersih dan memenuhi standar kebersihan. Memiliki ketelitian, disiplin, dan mampu bekerja secara mandiri maupun dalam tim.', en: 'Responsible for glass and workspace maintenance ensuring high cleanliness standards with strong precision, discipline, and teamwork.' },
+      'exp_3_badge': { id: 'Project Utama', en: 'Main Project' },
+      'exp_3_title': { id: 'Pengembangan Aplikasi CryptoKu', en: 'CryptoKu Mobile App Development' },
+      'exp_3_desc': { id: 'Mengembangkan aplikasi mobile CryptoKu sebagai platform pemantauan harga cryptocurrency secara real-time. Bertanggung jawab dalam analisis kebutuhan, perancangan UI/UX modern, pengembangan fitur utama, integrasi CoinGecko REST API, serta pengujian aplikasi.', en: 'Developed CryptoKu mobile app as a real-time cryptocurrency tracking platform using Flutter and CoinGecko REST API integration.' },
+      'exp_4_badge': { id: 'Project Utama', en: 'Main Project' },
+      'exp_4_title': { id: 'Pengembangan Aplikasi SholatKu', en: 'SholatKu Mobile App Development' },
+      'exp_4_desc': { id: 'Mengembangkan aplikasi mobile SholatKu sebagai platform informasi jadwal sholat modern untuk masyarakat Indonesia. Bertanggung jawab dalam proses analisis kebutuhan, perancangan UI/UX islami modern, pengembangan fitur utama seperti jadwal sholat 38 provinsi Indonesia, notifikasi waktu sholat, countdown sholat berikutnya, suara adzan otomatis, mode terang/gelap, serta pengujian dan penyempurnaan aplikasi untuk memberikan pengalaman pengguna yang optimal.', en: 'Built SholatKu mobile prayer schedule app for 38 Indonesian provinces featuring countdown timers, auto adhan audio, dark/light modes, and Material Design 3.' },
+
+      // Education Section
+      'edu_tag': { id: 'Latar Belakang Akademis', en: 'Academic Background' },
+      'edu_title': { id: 'Pendidikan', en: 'Education' },
+      'edu_level': { id: 'Sekolah Menengah Kejuruan', en: 'Vocational High School' },
+      'edu_school': { id: 'SMK Jakarta Pusat 1', en: 'SMK Jakarta Pusat 1' },
+      'edu_major': { id: 'Jurusan Rekayasa Perangkat Lunak (RPL)', en: 'Software Engineering Major (RPL)' },
+      'edu_desc': { id: 'Fokus mempelajari dasar-dasar pemrograman, logika algoritma, pengembangan aplikasi mobile (Flutter), pemrograman web (HTML, CSS, JavaScript), pengelolaan basis data, serta metode rekayasa perangkat lunak.', en: 'Focusing on computer science fundamentals, algorithmic logic, mobile app development (Flutter), web development, database management, and software engineering methodologies.' },
+
+      // Contact Section
+      'contact_tag': { id: 'Hubungi Saya', en: 'Get In Touch' },
+      'contact_title': { id: 'Kontak', en: 'Contact' },
+      'contact_domisili': { id: 'Domisili & Lokasi', en: 'Location & Domicile' },
+      'contact_form_title': { id: 'Kirim Pesan', en: 'Send a Message' },
+      'form_name_label': { id: 'Nama Lengkap', en: 'Full Name' },
+      'form_email_label': { id: 'Alamat Email', en: 'Email Address' },
+      'form_msg_label': { id: 'Isi Pesan', en: 'Message' },
+      'btn_send': { id: '🚀 Kirim Pesan', en: '🚀 Send Message' },
+
+      // Footer
+      'footer_copy': { id: '© 2026 Mochamad Fachrezi Azhari', en: '© 2026 Mochamad Fachrezi Azhari' },
+      'footer_tagline': { id: 'Building Digital Solutions For The Future', en: 'Building Digital Solutions For The Future' }
+    };
+
+    function updateLanguageUI() {
+      const desktopLangBtnText = document.getElementById('lang-text-desktop');
+      const mobileLangBtnText = document.getElementById('lang-text-mobile');
+      
+      if (desktopLangBtnText) {
+        desktopLangBtnText.textContent = currentLang === 'id' ? 'ID' : 'EN';
+      }
+      if (mobileLangBtnText) {
+        mobileLangBtnText.textContent = currentLang === 'id' ? 'ID' : 'EN';
+      }
+
+      // Update placeholders
+      const nameInput = document.getElementById('form-name');
+      const emailInput = document.getElementById('form-email');
+      const msgInput = document.getElementById('form-message');
+
+      if (nameInput) nameInput.placeholder = currentLang === 'id' ? 'Masukkan nama Anda' : 'Enter your full name';
+      if (emailInput) emailInput.placeholder = currentLang === 'id' ? 'nama@email.com' : 'name@email.com';
+      if (msgInput) msgInput.placeholder = currentLang === 'id' ? 'Tuliskan pesan atau pertanyaan Anda di sini...' : 'Write your message or inquiry here...';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translationsMap[key] && translationsMap[key][currentLang]) {
+          el.textContent = translationsMap[key][currentLang];
+        }
+      });
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      localStorage.setItem('lang', currentLang);
+      updateLanguageUI();
+    }
+
+    // Load Saved Language on Start
+    if (currentLang === 'en') {
+      setTimeout(updateLanguageUI, 100);
+    }
+
+    // Mobile Menu Functions
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+    }
+
+    // Modal Functions
+    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+    document.querySelectorAll('#demo-modal, #sholatku-modal, #philosophy-modal').forEach(modal => {
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal.id); });
+    });
+
+    // Real Contact Form Submission via FormSubmit API
+    async function submitForm(e) {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('form-name');
+      const emailInput = document.getElementById('form-email');
+      const messageInput = document.getElementById('form-message');
+      const submitBtn = document.getElementById('submit-btn');
+      const toast = document.getElementById('form-toast');
+      const errorAlert = document.getElementById('form-error');
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      hideFormError();
+
+      // Email Validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name || !email || !message) {
+        showFormError('Mohon isi semua kolom yang bertanda bintang (*).');
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        showFormError('Format alamat email tidak valid. Silakan periksa kembali email Anda.');
+        return;
+      }
+
+      // Loading State
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Mengirim Pesan...
+      `;
+
+      const formattedMessage = `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+
+      const payload = {
+        name: name,
+        email: email,
+        _subject: "Pesan Baru dari Website Portofolio Mochamad Fachrezi Azhari",
+        message: formattedMessage,
+        _captcha: "false",
+        _template: "table"
+      };
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/mochamad.fachrezi8@smk.belajar.id", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok || result.success === "true" || result.success === true) {
+          // Success state
+          document.getElementById('contact-form').classList.add('hidden');
+          document.getElementById('sender-name-display').textContent = name;
+          toast.classList.remove('hidden');
+        } else {
+          throw new Error(result.message || "Gagal mengirim pesan ke server.");
+        }
+      } catch (err) {
+        console.error("Form submission error:", err);
+        showFormError("Gagal menghubungkan ke server email. Anda dapat mencoba lagi atau langsung kirim via Email App.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
+
+    function showFormError(msg) {
+      const errorAlert = document.getElementById('form-error');
+      const errorMsg = document.getElementById('form-error-msg');
+      errorMsg.textContent = msg;
+      errorAlert.classList.remove('hidden');
+    }
+
+    function hideFormError() {
+      document.getElementById('form-error').classList.add('hidden');
+    }
+
+    function resetContactForm() {
+      document.getElementById('contact-form').reset();
+      document.getElementById('contact-form').classList.remove('hidden');
+      document.getElementById('form-toast').classList.add('hidden');
+      document.getElementById('form-error').classList.add('hidden');
+    }
+
+    function submitFormDirectMail() {
+      const name = document.getElementById('form-name').value.trim() || 'Pengunjung Website';
+      const email = document.getElementById('form-email').value.trim();
+      const message = document.getElementById('form-message').value.trim();
+
+      const bodyText = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
+      const subjectText = encodeURIComponent('Pesan Baru dari Website Portofolio Mochamad Fachrezi Azhari');
+      
+      window.location.href = `mailto:mochamad.fachrezi8@smk.belajar.id?subject=${subjectText}&body=${bodyText}`;
+    }
+
+    // Animated Statistics Counter for Projects
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute('data-target'));
+          const suffix = counter.getAttribute('data-suffix') || '';
+          let count = 0;
+          const duration = 1200; // ms
+          const stepTime = Math.max(Math.floor(duration / Math.max(target, 1)), 20);
+
+          const timer = setInterval(() => {
+            count += Math.ceil(target / (duration / stepTime));
+            if (count >= target) {
+              counter.textContent = target + suffix;
+              clearInterval(timer);
+            } else {
+              counter.textContent = count + suffix;
+            }
+          }, stepTime);
+
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.counter-stat').forEach(counter => {
+      counterObserver.observe(counter);
+    });
+
+    // Active Navigation Highlight on Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // ====== PREMIUM LOADING SCREEN ======
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loading-screen');
+        if (loader) {
+          loader.classList.add('hide');
+          setTimeout(() => loader.remove(), 600);
+        }
+      }, 1800);
+    });
+
+    // ====== NAVBAR SCROLL GLASSMORPHISM ======
+    const navbar = document.getElementById('navbar');
+    function handleNavbarScroll() {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      // Active nav highlight
+      let current = '';
+      const scrollY = window.scrollY + 200;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        if (scrollY >= top && scrollY < top + height) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('nav-active');
+        if (link.getAttribute('data-section') === current) {
+          link.classList.add('nav-active');
+        }
+      });
+    }
+    window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+
+    // ====== SCROLL REVEAL (IntersectionObserver) ======
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger children with delay
+          if (entry.target.classList.contains('stagger-children')) {
+            const children = entry.target.children;
+            Array.from(children).forEach((child, i) => {
+              child.style.transitionDelay = `${i * 100}ms`;
+            });
+          }
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .stagger-children').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // ====== PARALLAX on Scroll ======
+    const parallaxEls = document.querySelectorAll('.parallax-slow');
+    let ticking = false;
+    function updateParallax() {
+      const scrollY = window.scrollY;
+      parallaxEls.forEach(el => {
+        const speed = 0.15;
+        el.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // ====== LENIS SMOOTH SCROLL INITIALIZATION ======
+    let lenis;
+    if (typeof Lenis !== 'undefined') {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 2,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+    }
+
+
+
+
+
+    // ====== SPOTLIGHT CARDS MOUSE TRACKING ======
+    document.querySelectorAll('.glass-card').forEach(card => {
+      card.classList.add('spotlight-card');
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // ====== LETTER BY LETTER TEXT REVEAL ======
+    function initSplitHeadings() {
+      document.querySelectorAll('.split-heading, h2').forEach(heading => {
+        if (heading.dataset.splitDone) return;
+        heading.dataset.splitDone = "true";
+        const text = heading.textContent.trim();
+        heading.textContent = '';
+        
+        [...text].forEach((char, index) => {
+          const span = document.createElement('span');
+          span.className = 'letter-span';
+          span.textContent = char === ' ' ? '\u00A0' : char;
+          span.style.transitionDelay = `${index * 30}ms`;
+          heading.appendChild(span);
+        });
+      });
+    }
+    initSplitHeadings();
+
+    const letterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.letter-span').forEach(span => {
+            span.classList.add('revealed');
+          });
+          letterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('h2').forEach(h2 => letterObserver.observe(h2));
+
+    // ====== SMOOTH SCROLL for anchor links with Lenis support ======
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          if (lenis) {
+            lenis.scrollTo(targetEl, { offset: -70 });
+          } else {
+            const navHeight = navbar.offsetHeight;
+            const targetPos = targetEl.offsetTop - navHeight - 10;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
