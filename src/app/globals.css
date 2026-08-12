@@ -1,6 +1,5 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
 
 :root {
   --bg-navy: #081529;
@@ -90,7 +89,7 @@ body {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(10px) rotate(-2deg);
+    transform: translateY(-10px) rotate(-2deg);
   }
 }
 
